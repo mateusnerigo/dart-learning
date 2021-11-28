@@ -1,11 +1,11 @@
 import "dart:io";
 
 main() {
-  criarListaDeCompras();
+  createShoppingList();
 }
 
-// cria uma lista de compras
-void criarListaDeCompras() {
+// creates a shopping cart list
+void createShoppingList() {
   List<String> products = [];
   int index = 1;
   bool continueAdding = true;
@@ -29,7 +29,7 @@ void criarListaDeCompras() {
         removeProducts(products);
         break;
       default :
-        // limpa a tela
+        // cleans the screen
         print("\x1B[2J\x1b[0;0H");
 
         showInfo();
@@ -44,6 +44,7 @@ void criarListaDeCompras() {
   print(products);
 }
 
+// show instructions message
 void showInfo() {
   print("\nLISTA DE COMPRAS");
   print("\n\nDigite o nome dos produtos e tecle enter.");
@@ -52,7 +53,7 @@ void showInfo() {
   print("Tecle enter em um novo produto vazio para finalizar.\n\n");
 }
 
-// lista produtos de uma lista
+// lists products in list
 void listProducts(List<String> products) {
   for (int i = 0; i < products.length; i++) {
     print("Item $i - ${products[i]}");
@@ -60,7 +61,12 @@ void listProducts(List<String> products) {
   print('\n');
 }
 
-// remove um produto da lista
+// removes a product in list
 void removeProducts(List<String> products) {
+  print("Digite o número do item que deseja remover:");
+  listProducts(products);
 
+  int item = int.parse(stdin.readLineSync() ?? "");
+  products.removeAt(item);
+  print("Item removido...");
 }
