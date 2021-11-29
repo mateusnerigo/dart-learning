@@ -2,7 +2,8 @@ import 'dart:io';
 
 main() {
   // maiorMenorDeIdade();
-  calculaIMC();
+  // calculaIMC();
+  runMapExample();
 }
 
 // Maior ou menor de idade
@@ -53,3 +54,22 @@ String returnMsgIMC(double imc) {
   return msg;
 }
 
+// example for map type
+runMapExample() {
+  // types
+  // first (<type,) = index name
+  // second (type>) = values
+  Map<String, dynamic> myMap = {
+    "name": "Mateus Neri",
+    "age": 26,
+    "city": "Lins",
+    "state": "São Paulo",
+    "country": "Brazil",
+    "profession": "Programmer"
+  };
+
+  print(myMap["name"]);
+
+  myMap["age"] = 27;
+  print(myMap);
+}
