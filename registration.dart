@@ -50,7 +50,6 @@ void doRegistration() {
   Map<String, dynamic> user = {};
 
   cleanScreen();
-  List<String> userFields = ["name, age, city, country"];
   print('Enter your name:');
   user['name'] = stdin.readLineSync() ?? "Name not inserted";
   cleanScreen();
